@@ -3,12 +3,12 @@ POST http://localhost:3000/api/v1/users/registration
 Content-Type: application/json
 
 {
-    "name": "Jine",
+    "name": "martDASin",
     "surname": "Macford",
-    "nickname": "Girl",
+    "nickname": "",
     "age": 20,
-    "password": "ses3",
-    "email": "jine@gmail.com",
+    "password": "Admin",
+    "email": "marADAStin@gmail.com",
     "role": "user"
 }
 ### Authorization User
@@ -16,23 +16,23 @@ POST http://localhost:3000/api/v1/users/authorization
 Content-Type: application/json 
 
 {
-    "nickname": "Girl",
-    "password": "ses3"
+    "nickname": "Admin",
+    "password": "Admin"
 }
 ### search book 
-GET http://localhost:3000/api/v1/books/search?query=king
-Authentication: refresh eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX1JFRlJFU0giLCJlbWFpbCI6ImppbmVAZ21haWwuY29tIiwiaWF0IjoxNTM2MjYwNjIwLCJleHAiOjE1MzYzNDcwMjAsInN1YiI6IjViOGVmNzIyM2RiNDQzMGNjODBmYTM3YyJ9.VElF9zYdmZFwlFIfFhBgIeZmhveRHD5uoqLKss2etpSoX1ZQhp61NcdM-A_NJJmaYqZkq-6w31r6iVM8ve8R0A
+GET http://localhost:3000/api/v1/books/search?query=it
+Authentication: token 
 ### read book
 GET http://localhost:3000/api/v1/books/read/5b820412f920ef1f5099459d
-Authentication: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiSmluZSIsImVtYWlsIjoiamluZUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1YjhlZjcyMjNkYjQ0MzBjYzgwZmEzN2MiLCJyb2xlIjoiVXNlciIsImlhdCI6MTUzNjE4Njk5OSwiZXhwIjoxNTM2MTg3Mjk5LCJzdWIiOiI1YjhlZjcyMjNkYjQ0MzBjYzgwZmEzN2MifQ.4TPCw69GeabCk2t8oFtRz0GPWpufeQ35P_eigObXergudHHrQM4VE-VUJLJZPCDfGJQfSmsegRxRJu8-5NcOoQ
+Authentication: token 
 ### add comment 
-POST http://localhost:3000/api/v1/books/comment/5b81e86c47277b200c67c3ac
+POST http://localhost:3000/api/v1/books/comment/5b84aa038d8a79057808c869
 Content-Type: application/json
-Authentication: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiSmluZSIsImVtYWlsIjoiamluZUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1YjhlZjcyMjNkYjQ0MzBjYzgwZmEzN2MiLCJyb2xlIjoiVXNlciIsImlhdCI6MTUzNjE4NzMzOCwiZXhwIjoxNTM2MTkwOTM4LCJzdWIiOiI1YjhlZjcyMjNkYjQ0MzBjYzgwZmEzN2MifQ.8ofaqE1fCCOwrSv9uRGADxpw64kdhiwJth2KyCq5WxOOvTFCJYCbFSYrEL8GoKWe9Ph_xtOZCJQws48njtzkkQ
+Authentication: token 
 
 {
-    "comment": "GooDada!",
-    "nickname": "Girl"
+    "comment": "nice adasda",
+    "nickname": "Jhon"
 }
 
 //Admin command
@@ -59,13 +59,12 @@ Authentication: token
 }
 ### get comments for user name
 GET http://localhost:3000/api/v1/comments/searchuser?name=martin
-Authentication: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiSmluZSIsImVtYWlsIjoiamluZUBnbWFpbC5jb20iLCJ1c2VySWQiOiI1YjhlZjcyMjNkYjQ0MzBjYzgwZmEzN2MiLCJyb2xlIjoiVXNlciIsImlhdCI6MTUzNjE4NzMzOCwiZXhwIjoxNTM2MTkwOTM4LCJzdWIiOiI1YjhlZjcyMjNkYjQ0MzBjYzgwZmEzN2MifQ.8ofaqE1fCCOwrSv9uRGADxpw64kdhiwJth2KyCq5WxOOvTFCJYCbFSYrEL8GoKWe9Ph_xtOZCJQws48njtzkkQ
+Authentication: token 
 
-### delate comment by username
+### delate all comment by username
 DELETE http://localhost:3000/api/v1/comments/searchuser?name=martin
 Authentication: token 
 
 ### delete comment by comment id
-DELETE http://localhost:3000/api/v1/comments/searchid?id=5b85eb9cb2a2311d8052446b 
+DELETE http://localhost:3000/api/v1/comments/searchid?id=5b9577418efdc41b20005adb
 Authentication: token 
-
