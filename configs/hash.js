@@ -1,3 +1,3 @@
 module.exports = {
-    algorithm: 'SHA512'
+  algorithm: 'SHA512',
 };

@@ -1,5 +1,5 @@
 {
-  "name": "my_first_project",
+  "name": "fist-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,18 +7,30 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "node a.js",
+    "start": "set DEBUG=11,12 & node ./index.js",
+    "lint": "eslint --fix ./lib"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "debug": "^4.0.1",
     "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",
     "moment": "^2.22.2",
-    "mongoose": "^5.2.12",
-    "scribbletune": "^1.1.1"
+    "mongoose": "^5.2.14",
+    "multer": "^1.3.1",
+    "passport": "^0.4.0",
+    "passport-auth-token": "^1.0.1",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }

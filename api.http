@@ -1,0 +1,85 @@
+### registration user / create new user
+POST http://localhost:3000/api/v1/users/registration
+Content-Type: application/json`
+
+{
+    "name": "aaaa",
+    "surname": "Macford",
+    "nickname": "",
+    "age": 20,
+    "password": "aaaa",
+    "email": "marADAStin@gmail.com",
+    "role": "user"
+}
+### Authorization User
+POST http://localhost:3000/api/v1/users/authorization
+Content-Type: application/json 
+
+{
+    "nickname": "Admin",
+    "password": "Admin"
+}
+### add img
+POST http://localhost:3000/api/v1/users/single
+Authorization: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiQWFhYSIsImVtYWlsIjoibWFyQURBU3RpbkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1Yjk4MGE1MTFmMjFhNjI2ZGM0MTEzYzMiLCJyb2xlIjoiVXNlciIsImlhdCI6MTUzNjk0NTI4NSwiZXhwIjoxNTM2OTQ4ODg1LCJzdWIiOiI1Yjk4MGE1MTFmMjFhNjI2ZGM0MTEzYzMifQ.kdHbWEhYcbKgBWISGkPlDDroiDV1GlBRvHxNelPKA0N6Pwl7hYOLuakDpFeOgBexIMJDPdAFn9pWQ7Nt1S57KA
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="img"; filename="1.png"
+Content-Type: image/png
+
+< ./someImg/1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+### search book 
+GET http://localhost:3000/api/v1/books/search?query=it
+Authorization: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiQWFhYSIsImVtYWlsIjoibWFyQURBU3RpbkBnbWFpbC5jb20iLCJ1c2VySWQiOiI1Yjk4MGE1MTFmMjFhNjI2ZGM0MTEzYzMiLCJyb2xlIjoiVXNlciIsImlhdCI6MTUzNjk0NTI4NSwiZXhwIjoxNTM2OTQ4ODg1LCJzdWIiOiI1Yjk4MGE1MTFmMjFhNjI2ZGM0MTEzYzMifQ.kdHbWEhYcbKgBWISGkPlDDroiDV1GlBRvHxNelPKA0N6Pwl7hYOLuakDpFeOgBexIMJDPdAFn9pWQ7Nt1S57KA
+### read book
+GET http://localhost:3000/api/v1/books/read/5b820412f920ef1f5099459d
+Authorization: token 
+### add comment 
+POST http://localhost:3000/api/v1/books/comment/5b84aa038d8a79057808c869
+Content-Type: application/json
+Authorization: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiQWRtaW4iLCJ1c2VySWQiOiI1YjljMThmM2MwMDQ2NTE5NjAxY2UzY2UiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1MzcyODQyNjgsImV4cCI6MTUzNzI4Nzg2OCwic3ViIjoiNWI5YzE4ZjNjMDA0NjUxOTYwMWNlM2NlIn0.FLI9CSFuhREyRWhh7EYDbR-cp2wud91Us0kPe1u7LAQaw0NRTogKpWQJZmWTPX7upXwcIpEkbD1N8Q621SBhEg
+
+{
+    "comment": "nice adasda",
+    "nickname": "Admin"
+}
+### refresh token
+GET http://localhost:3000/api/v1/token/refresh
+Authorization: refresh eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX1JFRlJFU0giLCJlbWFpbCI6Im1hckFEQVN0aW5AZ21haWwuY29tIiwiaWF0IjoxNTM2OTcwMTkxLCJleHAiOjE1MzcwNTY1OTEsInN1YiI6IjViOTgwYTUxMWYyMWE2MjZkYzQxMTNjMyJ9.9-SanFwIKFZJGJjMOK8-bOA8sGp2Wt9tlSRyL1OJvDJbkaIgevUOVBiSSDoNgt_yQqcQhgNdGXPuwdKQbWRkow
+
+//Admin command
+
+### add book to db 
+POST http://localhost:3000/api/v1/books/add
+Content-Type: application/json
+Authorization: token 
+
+{
+	"name": "It",
+	"author": "King",
+	"description": "Horror",
+	"text": "Lorem ipsum tecto ex dolores?"
+}
+
+### change a book
+POST http://localhost:3000/api/v1/books/change/5b81e86c47277b200c67c3ac
+Content-Type: application/json
+Authorization: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiQWRtaW4iLCJ1c2VySWQiOiI1YjljMThmM2MwMDQ2NTE5NjAxY2UzY2UiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1MzcyODQyNjgsImV4cCI6MTUzNzI4Nzg2OCwic3ViIjoiNWI5YzE4ZjNjMDA0NjUxOTYwMWNlM2NlIn0.FLI9CSFuhREyRWhh7EYDbR-cp2wud91Us0kPe1u7LAQaw0NRTogKpWQJZmWTPX7upXwcIpEkbD1N8Q621SBhEg
+
+{
+	"author": "Hell!!",
+    "name" : "World!!"
+}
+### get comments for user name
+GET http://localhost:3000/api/v1/comments/searchuser?name=martin
+Authorization: token 
+
+### delate all comment by username
+DELETE http://localhost:3000/api/v1/comments/searchuser?name=Admin
+Authorization: token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJUT0tFTl9UWVBFX0FDQ0VTUyIsInVzZXJuYW1lIjoiQWRtaW4iLCJ1c2VySWQiOiI1YjljMThmM2MwMDQ2NTE5NjAxY2UzY2UiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE1MzcyODQyNjgsImV4cCI6MTUzNzI4Nzg2OCwic3ViIjoiNWI5YzE4ZjNjMDA0NjUxOTYwMWNlM2NlIn0.FLI9CSFuhREyRWhh7EYDbR-cp2wud91Us0kPe1u7LAQaw0NRTogKpWQJZmWTPX7upXwcIpEkbD1N8Q621SBhEg
+
+### delete comment by comment id
+DELETE http://localhost:3000/api/v1/comments/searchid?id=5b9577418efdc41b20005adb
+Authorization: token 
