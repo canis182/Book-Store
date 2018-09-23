@@ -3,7 +3,7 @@ module.exports = {
   access: {
     type: 'TOKEN_TYPE_ACCESS',
     secret: '908df97bf897gdf8bdf87dbcvbidfjgklrjt84',
-    expiresIn: '1h',
+    expiresIn: '5m',
   },
 
   refresh: {
